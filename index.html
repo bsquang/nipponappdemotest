@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="initial-scale=1, user-scalable=no">
+        
+      <title>NIPPON-2016</title>
+      
+      <link rel="stylesheet" media="all" href="css.css?89">            
+    
+      <script src='phonegap.js'></script>
+
+    </head>
+    <body>
+        
+        <div class='wrapper'>
+            
+            <div class='page' style='display: block' bsq-id='1'>
+                <div style='padding: 20px;'>
+                    <img src='nippon_logo.jpg' style='width: 100%' />
+                </div>
+                
+                <div style='position: absolute; bottom: 0; width: 100%; padding: 5px;'>
+                    <p class='simple-btn btn-blue' onclick='login()'>LOGIN</p>
+                </div>
+                
+            </div>
+            <div class='page' bsq-id='2' >
+                
+                <div class='group line'>
+                    <p class='title'>Barcode:</p>
+                    <p class='value'>123456789123456789</p>
+                </div>
+                <div class='group line'>
+                    <p class='title'>MemberID:</p>
+                    <p class='value'>69</p>
+                </div>
+                <div class='group line'>
+                    <p class='title'>Name:</p>
+                    <p class='value'>Nguyen Van A</p>
+                </div>
+                <div class='group line'>
+                    <p class='title'>Score:</p>
+                    <p class='value'>100</p>
+                </div>
+                
+                
+                <div style='position: absolute; bottom: 0;width: 100%'>
+                    <div style='width: 50%; float: left; padding: 5px;'>
+                        <p class='simple-btn-flex btn-red' onclick='logout()'>Logout</p>
+                    </div>
+                    <div style='width: 50%; float: left; padding: 5px;'>
+                        <p class='simple-btn-flex btn-blue' onclick='scan()'>Scan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='page' bsq-id='3' >
+                
+                <div class='group line' style='text-align: center'>
+                    <p>[SUMMARY]</p>
+                </div>
+                
+                <div class='list-summary' id='summary' style='height: 400px;overflow: auto;'>
+                    <div class='group line'>
+                        <p class='title'>123456789123456789</p>
+                        <p class='value'>5</p>
+                    </div>
+                    <div class='group line'>
+                        <p class='title'>123456789123456789</p>
+                        <p class='value'>5</p>
+                    </div>
+                    
+                </div>
+                
+                
+                <div style='position: absolute; bottom: 0;width: 100%'>
+                    <div style='width: 100%;padding: 5px;'>
+                        <p class='simple-btn-flex btn-grey' onclick='done()'>Done</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script type="text/javascript" src="jquery-2.1.3.min.js"></script>      
+        <script type="text/javascript" src="fastclick.js"></script>
+        
+        <script src="org.js?9"></script>
+        
+    </body>
+    
+  </html>
