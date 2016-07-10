@@ -72,8 +72,8 @@ function login() {
       function (error) {
           alert("Scanning failed: " + error);
       },{
-          "preferFrontCamera" : true, // iOS and Android
-          "showFlipCameraButton" : true, // iOS and Android
+          "preferFrontCamera" : false, // iOS and Android
+          "showFlipCameraButton" : false, // iOS and Android
           "prompt" : "Place a barcode inside the scan area", // supported on Android only
           "formats" : "CODE_128,EAN_13", // default: all but PDF_417 and RSS_EXPANDED
           "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
@@ -141,8 +141,8 @@ function scan() {
       function (error) {
           alert("Scanning failed: " + error);
       },{
-          "preferFrontCamera" : true, // iOS and Android
-          "showFlipCameraButton" : true, // iOS and Android
+          "preferFrontCamera" : false, // iOS and Android
+          "showFlipCameraButton" : false, // iOS and Android
           "prompt" : "Place a barcode inside the scan area", // supported on Android only
           "formats" : "CODE_128,EAN_13", // default: all but PDF_417 and RSS_EXPANDED
           "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
