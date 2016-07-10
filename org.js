@@ -75,7 +75,8 @@ function login() {
 }
     
 function logout() {
-    location.href = '';
+    if(confirm("Are you really to logout ?"))
+    {location.href = '';}
 }
 
 function scan() {
