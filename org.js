@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     FastClick.attach(document.body);
+    
+    calHeightSummary()
+    
+    
 }, false);
 
 $(".wrapper").height($(window).height())
@@ -85,6 +89,8 @@ function scan() {
         for(var i=0;i<db.length;i++){
             if (db[i].code == result.text && db[i].status == 0) {
                 user.score += db[i].point;
+                
+                $("#txtUserScore").html(user.score);
                 $("#totalScore").html("Totalscore: " + user.score);
                 
                 db[i].status = 1;
@@ -127,8 +133,16 @@ function scan() {
 }
 
 function addToList(name) {
-    var temp = "<div class='group line'><p class='title'>"+name+"</p></div>";
+    var temp = "<div class='group line'><p class='title'>"+name+"</p><p class='value'>added</p></div>";
     $("#summary").append(temp);
+}
+
+function calHeightSummary() {
+    var a1 = $(".page[bsq-id=3]").find(".line").outerHeight()
+    var a2 = $("#bottom-panel").outerHeight()
+    var result = $(window).height() - (a1+a2);
+    
+    $("#summary").height(result);
 }
 
 function done() {
