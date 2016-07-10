@@ -73,6 +73,9 @@ function login() {
     ); 
     
 }
+    
+       
+//}
 
 function logout() {
     location.href = '';
