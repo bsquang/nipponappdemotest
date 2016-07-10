@@ -151,9 +151,10 @@ function clearListSummary() {
 }
 
 function calHeightSummary() {
+    
     var a1 = $(".page[bsq-id=3]").find(".line").outerHeight()
-    var a2 = $("#bottom-panel").outerHeight()
-    var result = $(window).height() - (a1+a2);
+    var a2 = $("#bottom-panel").height()
+    var result = $(document).height() - (a1+a2);
     
     $("#summary").height(result);
 }
