@@ -76,7 +76,6 @@ function login() {
 //}
 
 function logout() {
-    localStorage.clear();
     location.href = '';
 }
 
