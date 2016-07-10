@@ -139,7 +139,7 @@ function scan() {
 }
 
 function addToList(name) {
-    var temp = "<div class='group line'><p class='title'>"+name+"</p><p class='value'>added</p></div>";
+    var temp = "<div class='group line animate fadeIn'><p class='title'>"+name+"</p><p class='value'>added</p></div>";
     $("#summary").append(temp);
     
     saveLocal();
@@ -161,9 +161,15 @@ function done() {
     gotoPage(2); clearListSummary();
 }
 
+var current = 0;
 function gotoPage(id) {
-    $(".page").hide();
-    $(".page[bsq-id="+id+"]").fadeIn(300);
+    if (current != id) {
+        $(".page").hide();
+        $(".page[bsq-id="+id+"]").fadeIn(300);
+        
+        current = id;
+    }
+    
 }
 
 initLocal();
