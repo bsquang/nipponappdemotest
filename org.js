@@ -141,6 +141,8 @@ function scan() {
 function addToList(name) {
     var temp = "<div class='group line'><p class='title'>"+name+"</p><p class='value'>added</p></div>";
     $("#summary").append(temp);
+    
+    saveLocal();
 }
 
 function clearListSummary() {
@@ -162,4 +164,20 @@ function done() {
 function gotoPage(id) {
     $(".page").hide();
     $(".page[bsq-id="+id+"]").show();
+}
+
+initLocal();
+function initLocal() {
+    if (localStorage.user != undefined) {
+        user = JSON.parse(localStorage.user);
+    }else{
+        localStorage.user = user;
+    }
+}
+function saveLocal() {
+    localStorage.user = JSON.stringify(user);
+}
+function clearLocal() {
+    localStorage.clear();
+    location.href = '';
 }
