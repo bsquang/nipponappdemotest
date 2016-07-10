@@ -85,6 +85,7 @@ function scan() {
       function (result) {
         
         var nothing = true;
+        var exist = false;
 
         for(var i=0;i<db.length;i++){
             if (db[i].code == result.text && db[i].status == 0) {
@@ -103,6 +104,8 @@ function scan() {
                 
                 alert("Product has been scanned!")
                 
+                exist = true;
+                
                 nothing = false;
             
                 break;
@@ -114,7 +117,10 @@ function scan() {
             alert("Wrong product!")
         }
         else{
-            gotoPage(3)
+            if (exist == false) {
+                gotoPage(3)
+            }
+            
         }
         
         
@@ -137,6 +143,10 @@ function addToList(name) {
     $("#summary").append(temp);
 }
 
+function clearListSummary() {
+    $("#summary").html('')
+}
+
 function calHeightSummary() {
     var a1 = $(".page[bsq-id=3]").find(".line").outerHeight()
     var a2 = $("#bottom-panel").outerHeight()
@@ -146,7 +156,7 @@ function calHeightSummary() {
 }
 
 function done() {
-    gotoPage(2)
+    gotoPage(2); clearListSummary();
 }
 
 function gotoPage(id) {
