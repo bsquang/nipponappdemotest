@@ -81,17 +81,20 @@ function scan() {
       function (result) {
         
         var nothing = true;
-        var name;
+
         for(var i=0;i<db.length;i++){
             if (db[i].code == result.text && db[i].status == 0) {
                 user.score += db[i].point;
-                name = db[i].name;
+                $("#totalScore").html("Totalscore: " + user.score);
+                
                 db[i].status = 1;
-                alert("Product: " + name + "\n" + "User score: " + user.score)
+                
+                addToList(db[i].name);                
                 
                 nothing = false;
                 break;
             }else if (db[i].code == result.text && db[i].status == 1)  {
+                
                 alert("Product has been scanned!")
                 
                 nothing = false;
@@ -104,6 +107,10 @@ function scan() {
         if (nothing) {
             alert("Wrong product!")
         }
+        else{
+            gotoPage(3)
+        }
+        
         
         
           //alert("We got a barcode\n" +
@@ -117,6 +124,11 @@ function scan() {
    );
     
     
+}
+
+function addToList(name) {
+    var temp = "<div class='group line'><p class='title'>"+name+"</p></div>";
+    $("#summary").append(temp);
 }
 
 function done() {
