@@ -55,7 +55,7 @@
 		<true/>
 	</gap:config-file>
 	
-	<plugin name="phonegap-plugin-barcodescanner" source="pgb" />
+	<gap:plugin name="phonegap-plugin-barcodescanner" />
 	
 	<gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />
 	<plugin name="cordova-plugin-dialogs" spec="1.1.1" source="pgb" />
