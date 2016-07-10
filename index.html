@@ -7,7 +7,8 @@
         
       <title>NIPPON-2016</title>
       
-      <link rel="stylesheet" media="all" href="css.css?89">            
+      <link rel="stylesheet" media="all" href="css.css?89">
+      <link rel="stylesheet" media="all" href="animate.css?89">
     
       <script src='phonegap.js'></script>
 
@@ -18,35 +19,35 @@
             
             <div class='page' style='display: block' bsq-id='1'>
                 <div style='padding: 20px;'>
-                    <img src='nippon_logo.jpg' style='width: 100%'/>
+                    <img class='animated fadeIn' src='nippon_logo.jpg' style='width: 100%'/>
                 </div>
                 
-                <div style='position: absolute; bottom: 0; width: 100%; padding: 5px;'>
+                <div class='animated slideInUp' style='position: absolute; bottom: 0; width: 100%; padding: 5px;'>
                     <p class='simple-btn btn-blue' onclick='login()'>LOGIN</p>
                 </div>
                 
             </div>
             <div class='page' bsq-id='2' >
                 
-                <div class='group line'>
+                <div class='group line' class='animated slideInLeft'>
                     <p class='title'>Barcode:</p>
                     <p class='value' id='txtBarcodeMID'>123456789123456789</p>
                 </div>
-                <div class='group line'>
+                <div class='group line' class='animated slideInLeft'>
                     <p class='title'>MemberID:</p>
                     <p class='value'>10</p>
                 </div>
-                <div class='group line'>
+                <div class='group line' class='animated slideInLeft'>
                     <p class='title'>Name:</p>
                     <p class='value'>Nguyen Van A</p>
                 </div>
-                <div class='group line'>
+                <div class='group line' class='animated slideInLeft'>
                     <p class='title'>Score:</p>
                     <p class='value' id='txtUserScore'>100</p>
                 </div>
                 
                 
-                <div style='position: absolute; bottom: 0;width: 100%'>
+                <div class='animated slideInUp' style='position: absolute; bottom: 0;width: 100%'>
                     <div style='width: 50%; float: left; padding: 5px;'>
                         <p class='simple-btn-flex btn-red' onclick='logout()'>Logout</p>
                     </div>
@@ -68,10 +69,10 @@
                 
                 
                 <div style='position: absolute; bottom: 0;width: 100%' id='bottom-panel'>
-                    <div style='width: 100%;padding: 5px;'>
+                    <div style='width: 100%;padding: 5px;' class='animated slideInLeft' >
                         <p class='simple-btn-flex btn-blue' onclick='scan()'>Scan</p>
                     </div>
-                    <div style='width: 100%;padding: 5px;'>
+                    <div style='width: 100%;padding: 5px;' class='animated slideInRight' >
                         <p class='simple-btn-flex btn-grey' onclick='done()'>Done</p>
                     </div>
                 </div>

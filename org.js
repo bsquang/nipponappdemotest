@@ -163,7 +163,7 @@ function done() {
 
 function gotoPage(id) {
     $(".page").hide();
-    $(".page[bsq-id="+id+"]").show();
+    $(".page[bsq-id="+id+"]").fadeIn(300);
 }
 
 initLocal();
