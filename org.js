@@ -88,7 +88,7 @@ function logout() {
         'Are you really to logout ?', // message
          function(e){if(e==1)location.href = '';},            // callback to invoke with index of button pressed
         'Game Over',           // title
-        ['No','Exit']     // buttonLabels
+        ['Exit','No']     // buttonLabels
     );
     
   
