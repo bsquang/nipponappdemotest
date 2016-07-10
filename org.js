@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     FastClick.attach(document.body);
     
+    //$(".wrapper").height($(window).height())
     calHeightSummary()
     
     
 }, false);
 
-$(".wrapper").height($(window).height())
+
 
 var user = {
     'name':'',
