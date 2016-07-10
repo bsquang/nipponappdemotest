@@ -18,7 +18,7 @@
     </author>
 	
 	<!--<preference name="phonegap-version" value="cli-5.2.0" />-->
-	<preference name="phonegap-version" value="3.3.0" />
+	<preference name="phonegap-version" value="3.4.0" />
 	
 	<preference name="orientation" value="portrait" />
 	<preference name="fullscreen" value="true" />  
@@ -61,8 +61,7 @@
 	
 	<gap:plugin name="manateeworks-barcodescanner" source="npm"/>
 	<!--<plugin spec="https://github.com/phonegap/phonegap-plugin-barcodescanner.git" source="git" />-->
-	
-	<gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />
+
 	<plugin name="cordova-plugin-dialogs" spec="1.1.1" source="pgb" />
 	
 	<access origin="*"/>
