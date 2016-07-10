@@ -71,5 +71,10 @@
 
 	<plugin name="cordova-plugin-dialogs" spec="1.1.1" source="pgb" />
 	
+	<access origin="*"/> <!-- allow all pages, use for development -->
+	<access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
+
+	<gap:plugin name="pushwoosh-pgb-plugin" source="npm" />
+	
 	<access origin="*"/>
 </widget>
