@@ -47,12 +47,14 @@ function login() {
             $("#txtBarcodeMID").html("8863366820017")
             $("#txtUserScore").html(user.score);
             
-            navigator.notification.alert(
-                'Login successful!',  // message
-                function(){gotoPage(2)},         // callback
-                'Login status',            // title
-                'Done'                  // buttonName
-            );
+            gotoPage(2)
+            
+            //navigator.notification.alert(
+            //    'Login successful!',  // message
+            //    function(){gotoPage(2)},         // callback
+            //    'Login status',            // title
+            //    'Done'                  // buttonName
+            //);
             
             
         }else{
