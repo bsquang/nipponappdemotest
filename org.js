@@ -70,7 +70,7 @@ function login() {
         
       }, 
       function (error) {
-          alert("Scanning failed: " + error);
+          //alert("Scanning failed: " + error);
       },{
           "preferFrontCamera" : false, // iOS and Android
           "showFlipCameraButton" : false, // iOS and Android
@@ -83,8 +83,15 @@ function login() {
 }
     
 function logout() {
-    if(confirm("Are you really to logout ?"))
-    {location.href = '';}
+    
+    navigator.notification.confirm(
+        'Are you really to logout ?', // message
+         function(e){if(e==1)location.href = '';},            // callback to invoke with index of button pressed
+        'Game Over',           // title
+        ['No','Exit']     // buttonLabels
+    );
+    
+  
 }
 
 function scan() {
@@ -110,7 +117,13 @@ function scan() {
                 break;
             }else if (db[i].code == result.text && db[i].status == 1)  {
                 
-                alert("Product has been scanned!")
+                navigator.notification.alert(
+                    'Product has been scanned!',  // message
+                    null,         // callback
+                    'Scan result',            // title
+                    'Retry'                  // buttonName
+                );
+                
                 
                 exist = true;
                 
@@ -122,7 +135,12 @@ function scan() {
         
         
         if (nothing) {
-            alert("Wrong product!")
+             navigator.notification.alert(
+                'Wrong product!',  // message
+                null,         // callback
+                'Scan result',            // title
+                'Retry'                  // buttonName
+            );
         }
         else{
             if (exist == false) {
@@ -139,7 +157,7 @@ function scan() {
           //      "Cancelled: " + result.cancelled);
       }, 
       function (error) {
-          alert("Scanning failed: " + error);
+          //alert("Scanning failed: " + error);
       },{
           "preferFrontCamera" : false, // iOS and Android
           "showFlipCameraButton" : false, // iOS and Android
