@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 var user = {
-    'name':'',
+    'name':'VÂN ĐỨC',
     'score':10,
     'code':''
 }
 var db = []; createDB();
 function createDB() {
-    db.push({'name':'VATEX 39A-2P 17L','code':'893051670996890291','serial':'VTXC39A2PX-17L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 17L','code':'893051670996890292','serial':'VTXC39A2PX-17L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 17L','code':'893051670996890293','serial':'VTXC39A2PX-17L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 17L','code':'893051670996890294','serial':'VTXC39A2PX-17L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 17L','code':'893051670996890295','serial':'VTXC39A2PX-17L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890291','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890292','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890293','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890294','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890295','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
     
     db.push({'name':'VINILEX 120 A/P BASE (VP) 16L','code':'893042950439890001','serial':'V12XBASEVP-16L', 'point':5, 'status':0})
     db.push({'name':'VINILEX 120 A/P BASE (VP) 16L','code':'893042950439890002','serial':'V12XBASEVP-16L', 'point':5, 'status':0})
@@ -41,10 +41,10 @@ function login() {
     cordova.plugins.barcodeScanner.scan(
       function (result) {
         
-        if (result.text == "8863366820017") {
+        if (result.text == "8863366820079") {
             
-            user.code = "8863366820017";
-            $("#txtBarcodeMID").html("8863366820017")
+            user.code = "8863366820079";
+            $("#txtBarcodeMID").html("8863366820079")
             $("#txtUserScore").html(user.score);
             
             gotoPage(2)
