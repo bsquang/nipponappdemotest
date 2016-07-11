@@ -172,7 +172,7 @@ function scan() {
 
 function addToList(name) {
     var temp = "<div class='group line animated fadeIn'><p class='title'>"+name+"</p><p class='value'>added</p></div>";
-    $("#summary").append(temp);
+    $("#summary").prepend(temp);
     calHeightSummary()
     saveLocal();
 }
