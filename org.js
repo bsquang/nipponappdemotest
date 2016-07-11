@@ -16,11 +16,11 @@ var user = {
 }
 var db = []; createDB();
 function createDB() {
-    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890291','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890292','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890293','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890294','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
-    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890295','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890306','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890307','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890308','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890309','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
+    db.push({'name':'VATEX 39A-2P 18L','code':'893051670996890310','serial':'VTXC39A2P-18L', 'point':10, 'status':0})
     
     db.push({'name':'VINILEX 120 A/P BASE (VP) 16L','code':'893042950439890001','serial':'V12XBASEVP-16L', 'point':5, 'status':0})
     db.push({'name':'VINILEX 120 A/P BASE (VP) 16L','code':'893042950439890002','serial':'V12XBASEVP-16L', 'point':5, 'status':0})
