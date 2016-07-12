@@ -1,3 +1,6 @@
+var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
+
 document.addEventListener('DOMContentLoaded', function() {
     FastClick.attach(document.body);
     
@@ -223,17 +226,72 @@ function clearLocal() {
 
 // Test Push Notification
 
+
+
+
 document.addEventListener('deviceready', function(){
-    initPushwoosh();
+    if (deviceType != 'Android') {
+        initPushwooshiOS();
+    }else{
+        initPushwooshANDROID();
+    }
+    
 }, false);
 
+
 document.addEventListener('push-notification', function(event) {
-             var notification = event.notification;
-             //alert(notification.aps.alert);
-             pushNotification.setApplicationIconBadgeNumber(0);
+    if (deviceType != 'Android') {
+        var notification = event.notification;
+        //alert(notification.aps.alert);
+        pushNotification.setApplicationIconBadgeNumber(0);
+    
+    }else{
+        var title = event.notification.title;
+ 
+        //example of obtaining custom data from push notification
+        var userData = event.notification.userdata;
+     
+        console.warn('user data: ' + JSON.stringify(userData));
+     
+        //we might want to display an alert with push notifications title
+        //alert(title);
+    }
 });
 
-function initPushwoosh() {
+function initPushwooshANDROID()
+{
+    var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+ 
+    //set push notifications handler
+    document.addEventListener('push-notification', function(event) {
+        var title = event.notification.title;
+        var userData = event.notification.userdata;
+                                 
+        if(typeof(userData) != "undefined") {
+            console.warn('user data: ' + JSON.stringify(userData));
+        }
+                                     
+        //alert(title);
+    });
+ 
+    //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", pw_appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
+    pushNotification.onDeviceReady({ projectid: "nipponappdemo2016", pw_appid : "98353-6E5FA" });
+ 
+    //register for pushes
+    pushNotification.registerDevice(
+        function(status) {
+            var pushToken = status;
+            console.warn('push token: ' + pushToken);
+        },
+        function(status) {
+            console.warn(JSON.stringify(['failed to register ', status]));
+        }
+    );
+}
+
+
+
+function initPushwooshiOS() {
     var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
  
     //set push notification callback before we initialize the plugin
