@@ -231,7 +231,7 @@ function clearLocal() {
 
 document.addEventListener('deviceready', function(){
     if (deviceType != 'Android') {
-        alert("iOS")
+        //alert("iOS")
         initPushwooshiOS();
     }else{
         alert("android")
@@ -273,6 +273,8 @@ function initPushwooshANDROID()
             alert('failed: ' + status);
         }
     );
+    
+    alert("here android notification")
 }
 
 
@@ -300,7 +302,7 @@ function initPushwooshiOS() {
         function(status) {
             var deviceToken = status['deviceToken'];
             console.warn('registerDevice: ' + deviceToken);
-            alert('registerDevice: ' + deviceToken);
+            //alert('registerDevice: ' + deviceToken);
         },
         function(status) {
             console.warn('failed to register : ' + JSON.stringify(status));
