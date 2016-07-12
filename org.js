@@ -241,24 +241,6 @@ document.addEventListener('deviceready', function(){
 }, false);
 
 
-document.addEventListener('push-notification', function(event) {
-    if (deviceType != 'Android') {
-        var notification = event.notification;
-        //alert(notification.aps.alert);
-        pushNotification.setApplicationIconBadgeNumber(0);
-    
-    }else{
-        var title = event.notification.title;
- 
-        //example of obtaining custom data from push notification
-        var userData = event.notification.userdata;
-     
-        console.warn('user data: ' + JSON.stringify(userData));
-     
-        //we might want to display an alert with push notifications title
-        //alert(title);
-    }
-});
 
 function initPushwooshANDROID()
 {
@@ -284,6 +266,7 @@ function initPushwooshANDROID()
         function(status) {
             var pushToken = status;
             console.warn('push token: ' + pushToken);
+            alert('registerDevice: ' + pushToken);
         },
         function(status) {
             console.warn(JSON.stringify(['failed to register ', status]));
@@ -298,15 +281,15 @@ function initPushwooshiOS() {
  
     //set push notification callback before we initialize the plugin
     document.addEventListener('push-notification', function(event) {
-                                //get the notification payload
-                                var notification = event.notification;
- 
-                                //display alert to the user for example
-                                //alert(notification.aps.alert);
-                               
-                                //clear the app badge
-                                pushNotification.setApplicationIconBadgeNumber(0);
-                            });
+        //get the notification payload
+        var notification = event.notification;
+
+        //display alert to the user for example
+        //alert(notification.aps.alert);
+       
+        //clear the app badge
+        pushNotification.setApplicationIconBadgeNumber(0);
+    });
  
     //initialize the plugin
     pushNotification.onDeviceReady({pw_appid:"98353-6E5FA"});
@@ -316,6 +299,7 @@ function initPushwooshiOS() {
         function(status) {
             var deviceToken = status['deviceToken'];
             console.warn('registerDevice: ' + deviceToken);
+            alert('registerDevice: ' + deviceToken);
         },
         function(status) {
             console.warn('failed to register : ' + JSON.stringify(status));
