@@ -249,7 +249,7 @@ window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
 function initPushwooshANDROID()
 {
     alert("here android notification0s")
-    var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+    var pushNotification = plugins.pushNotification;
     
     alert("here android notification1")
  
