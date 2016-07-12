@@ -231,8 +231,10 @@ function clearLocal() {
 
 document.addEventListener('deviceready', function(){
     if (deviceType != 'Android') {
+        alert("iOS")
         initPushwooshiOS();
     }else{
+        alert("android")
         initPushwooshANDROID();
     }
     
