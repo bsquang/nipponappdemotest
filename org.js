@@ -241,9 +241,9 @@ document.addEventListener('deviceready', function(){
 }, false);
 
 
-
 function initPushwooshANDROID()
 {
+    alert("here android notification0s")
     var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
     
     alert("here android notification1")
