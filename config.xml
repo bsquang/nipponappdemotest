@@ -76,5 +76,4 @@
 
 	<gap:plugin name="pushwoosh-pgb-plugin" source="npm" />
 	
-	<access origin="*"/>
 </widget>
