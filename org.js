@@ -245,6 +245,8 @@ document.addEventListener('deviceready', function(){
 function initPushwooshANDROID()
 {
     var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+    
+    alert("here android notification1")
  
     //set push notifications handler
     document.addEventListener('push-notification', function(event) {
@@ -257,9 +259,13 @@ function initPushwooshANDROID()
                                      
         //alert(title);
     });
+    
+    alert("here android notification2")
  
     //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", pw_appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
     pushNotification.onDeviceReady({ projectid: "745318916811", pw_appid : "98353-6E5FA" });
+    
+    alert("here android notification3")
  
     //register for pushes
     pushNotification.registerDevice(
@@ -274,7 +280,7 @@ function initPushwooshANDROID()
         }
     );
     
-    alert("here android notification")
+    alert("here android notification4")
 }
 
 
@@ -312,4 +318,6 @@ function initPushwooshiOS() {
      
     //reset badges on app start
     pushNotification.setApplicationIconBadgeNumber(0);
+    
+    alert("here ios notification load done")
 }
